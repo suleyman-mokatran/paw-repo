@@ -16,7 +16,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int AppUserId;
-
+////test
     String firstname;
     String lastname;
     Date BirthDate;
