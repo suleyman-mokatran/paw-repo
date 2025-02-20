@@ -5,19 +5,18 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Entity
 @Getter
 @Setter
-@Table(name = "appointments")
-public class Appointment {
+@Table(name = "services")
+public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int appointmentId;
+    int serviceId;
 
-    Date date;
-    String notes;
-    String status;
+    String serviceName;
+    String description;
+    float price;
+
 }
