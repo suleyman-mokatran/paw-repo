@@ -15,6 +15,7 @@ public class Pet {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     int PetId;
 
+    @Column (nullable = false)
     String PetName;
     String gender;
     String status;

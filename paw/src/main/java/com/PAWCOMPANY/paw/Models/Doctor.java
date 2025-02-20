@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "doctors")
-public class Doctor extends PetUser {
+public class Doctor extends appUser {
 
     @Column (nullable = false)
     String specialization;
