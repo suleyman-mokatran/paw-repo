@@ -15,6 +15,7 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int AppointmentId;
+    float price;
     Date Time;
     String Status;
 }

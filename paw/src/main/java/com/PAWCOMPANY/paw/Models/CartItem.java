@@ -14,5 +14,5 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int CartItemId;
     int Quantity;
-    int Price;
+    float Price;
 }

@@ -19,7 +19,7 @@ public class Product {
 
     String ProductName;
     String Description;
-    int Price;
+    float Price;
     int Stock;
     Image ProductImage;
 }
