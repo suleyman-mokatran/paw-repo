@@ -13,9 +13,7 @@ public class Doctor extends AppUser {
 
     @Column (nullable = false)
     String specialization;
-
     String availability;
-
     int experienceYears;
 
     @OneToOne(cascade = CascadeType.ALL)
