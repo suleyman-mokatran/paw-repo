@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,4 +17,11 @@ public class CartItem {
     int CartItemId;
     int Quantity;
     float Price;
+
+    @ManyToMany(mappedBy = "Products")
+    private List<Product> productList ;
+
+    @ManyToOne
+    @JoinColumn(name = "CartId")
+    private Cart cart;
 }

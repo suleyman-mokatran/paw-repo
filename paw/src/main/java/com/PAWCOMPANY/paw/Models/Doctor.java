@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Entity
 @Getter
@@ -16,8 +18,7 @@ public class Doctor extends AppUser {
     String availability;
     int experienceYears;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "clinicid", referencedColumnName = "clinicId")
-    int clinicID;
 
+    @OneToMany(mappedBy = "Doctor", cascade = CascadeType.ALL)
+    private List<Appointment> appointmentList;
 }

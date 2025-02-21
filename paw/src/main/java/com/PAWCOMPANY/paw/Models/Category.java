@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -16,4 +18,10 @@ public class Category {
 
     String categoryName;
     String categoryType;
+
+    @OneToMany(mappedBy = "Pet", cascade = CascadeType.ALL)
+    private List<Pet> petList;
+
+    @OneToMany(mappedBy = "Product", cascade = CascadeType.ALL)
+    private List<Product> productList;
 }

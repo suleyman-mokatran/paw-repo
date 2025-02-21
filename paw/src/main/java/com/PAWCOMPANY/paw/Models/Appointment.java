@@ -18,4 +18,18 @@ public class Appointment {
     float price;
     Date Time;
     String Status;
+
+    @ManyToOne
+    @JoinColumn(name = "AppUserId")
+    private AppUser appUser;
+
+    @ManyToOne
+    @JoinColumn(name = "ServiceId")
+    private Service service;
+
+    @ManyToOne
+    @JoinColumn(name = "DoctorId")
+    private Doctor doctor;
+
+
 }

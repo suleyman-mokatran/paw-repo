@@ -12,7 +12,10 @@ import java.util.List;
 @Table(name = "serviceproviders")
 
 public class ServiceProvider extends AppUser {
+
+    @OneToMany(mappedBy = "ServiceProvider", cascade = CascadeType.ALL)
     private List<Service> serviceList;
+
 
 }
 

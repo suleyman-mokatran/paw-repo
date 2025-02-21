@@ -29,4 +29,17 @@ public class Pet {
     Date LastVetVisit;
     Date NextVetVisit;
     Date CreatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "PetUserId")
+    private AppUser appUser;
+
+    @ManyToOne
+    @JoinColumn(name = "AdopterId")
+    private AppUser Adopter;
+
+    @ManyToOne
+    @JoinColumn(name = "CategoryId")
+    private Category category;
+
 }

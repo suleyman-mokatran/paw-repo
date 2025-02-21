@@ -18,4 +18,18 @@ public class Review {
     String Rating;
     String Comment;
     Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "Product")
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "AppUser")
+    private AppUser appUser;
+
+    @ManyToOne
+    @JoinColumn(name = "Service")
+    private Service service;
+
+
 }
