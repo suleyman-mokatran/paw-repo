@@ -23,22 +23,22 @@ public class Product {
     String Description;
     float Price;
     int Stock;
-    Image ProductImage;
+
 
     @ManyToOne
     @JoinColumn(name = "ProductProviderId")
-    private ProductProvider productProvider;
+    private ProductProvider ProductProvider;
 
-    @OneToMany(mappedBy = "Product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<Review> reviewList;
 
     @ManyToOne
     @JoinColumn(name = "Category")
-    private Category category;
+    private Category ProductCategory;
 
     @ManyToOne
     @JoinColumn(name = "Company")
-    private Company company;
+    private Company Company;
 
     @ManyToMany
     @JoinTable(

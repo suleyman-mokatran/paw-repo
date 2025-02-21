@@ -25,7 +25,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "ServiceId")
-    private Service service;
+    private Service Service;
 
     @ManyToOne
     @JoinColumn(name = "DoctorId")

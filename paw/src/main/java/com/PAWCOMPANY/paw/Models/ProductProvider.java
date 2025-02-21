@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "productproviders")
+
 public class ProductProvider extends AppUser {
 
     @OneToMany(mappedBy = "ProductProvider", cascade = CascadeType.ALL)
@@ -19,7 +19,5 @@ public class ProductProvider extends AppUser {
     @JoinColumn(name = "CompanyId", referencedColumnName = "CompanyId")
     private Company company;
 
-    @ManyToOne
-    @JoinColumn(name = "AppUserId")
-    private AppUser appUser;
+
 }

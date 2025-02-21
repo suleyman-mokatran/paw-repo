@@ -9,13 +9,16 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "serviceproviders")
+
 
 public class ServiceProvider extends AppUser {
 
-    @OneToMany(mappedBy = "ServiceProvider", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)
     private List<Service> serviceList;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CompanyId", referencedColumnName = "CompanyId")
+    private Company company;
 
 }
 

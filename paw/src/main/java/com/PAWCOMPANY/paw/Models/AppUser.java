@@ -27,7 +27,7 @@ public class AppUser {
     String email;
     @Column (unique = true,nullable = false)
     int phone;
-    Image profile;
+
     String Role;
     String address;
     String password;

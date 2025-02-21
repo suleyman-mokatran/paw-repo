@@ -18,7 +18,7 @@ public class Order {
     float TotalPrice;
     String  Status;
 
-    @OneToMany(mappedBy = "Order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItemList;
 
     @OneToOne(cascade = CascadeType.ALL)

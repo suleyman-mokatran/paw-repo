@@ -18,7 +18,7 @@ public class OrderItem {
     int quantity;
     Float price;
 
-    @ManyToMany(mappedBy = "Products")
+    @ManyToMany(mappedBy = "orderItemList")
     private List<Product> productList ;
 
     @ManyToOne

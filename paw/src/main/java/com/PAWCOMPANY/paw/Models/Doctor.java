@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "doctors")
+
 public class Doctor extends AppUser {
 
     @Column (nullable = false)

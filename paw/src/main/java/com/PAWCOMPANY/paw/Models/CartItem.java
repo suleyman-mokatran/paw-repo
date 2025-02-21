@@ -18,7 +18,7 @@ public class CartItem {
     int Quantity;
     float Price;
 
-    @ManyToMany(mappedBy = "Products")
+    @ManyToMany(mappedBy = "cartItemList")
     private List<Product> productList ;
 
     @ManyToOne

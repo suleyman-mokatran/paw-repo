@@ -40,6 +40,6 @@ public class Pet {
 
     @ManyToOne
     @JoinColumn(name = "CategoryId")
-    private Category category;
+    private Category PetCategory;
 
 }

@@ -17,13 +17,13 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int CartId;
 
-    @OneToMany(mappedBy = "Cart", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> cartItemList;
 
-    @OneToOne(mappedBy = "Order")
+    @OneToOne(mappedBy = "cart")
     private Order order;
 
-    @OneToOne(mappedBy = "AppUser")
+    @OneToOne(mappedBy = "cart")
     private AppUser appUser;
 
 }

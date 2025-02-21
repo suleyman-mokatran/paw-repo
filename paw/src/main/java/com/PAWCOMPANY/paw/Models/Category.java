@@ -19,9 +19,9 @@ public class Category {
     String categoryName;
     String categoryType;
 
-    @OneToMany(mappedBy = "Pet", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "PetCategory", cascade = CascadeType.ALL)
     private List<Pet> petList;
 
-    @OneToMany(mappedBy = "Product", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ProductCategory", cascade = CascadeType.ALL)
     private List<Product> productList;
 }

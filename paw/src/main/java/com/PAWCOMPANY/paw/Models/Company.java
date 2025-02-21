@@ -20,10 +20,10 @@ public class Company {
     @OneToMany(mappedBy = "Company", cascade = CascadeType.ALL)
     private List<Product> productList;
 
-    @OneToOne(mappedBy = "ServiceProvider")
+    @OneToOne(mappedBy = "company")
     private ServiceProvider serviceProvider;
 
-    @OneToOne(mappedBy = "ProductProvider")
+    @OneToOne(mappedBy = "company")
     private ProductProvider productProvider;
 
 
