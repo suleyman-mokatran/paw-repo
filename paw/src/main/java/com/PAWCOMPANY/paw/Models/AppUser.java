@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.*;
+import java.lang.annotation.Inherited;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "appusers")
-
+@Inheritance (strategy =  InheritanceType.JOINED)
 public class AppUser {
 
     @Id
