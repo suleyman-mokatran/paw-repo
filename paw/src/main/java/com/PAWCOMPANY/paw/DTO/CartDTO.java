@@ -10,7 +10,6 @@ import java.util.List;
 @Setter
 public class CartDTO {
 
-    @NotNull(message = "User ID is required")
     private Integer appUserId;
 
     private List<CartItemDTO> cartItems;

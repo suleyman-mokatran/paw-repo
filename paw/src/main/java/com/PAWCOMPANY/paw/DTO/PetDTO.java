@@ -19,7 +19,7 @@ public class PetDTO {
     private String gender;
 
     @NotNull(message = "Status is required")
-    @Pattern(regexp = "^(Available|Adopted|Fostered)$", message = "Status must be 'Available', 'Adopted', or 'Fostered'")
+    @Pattern(regexp = "^(Available|Adopted|Fostered|Lost|Found)$", message = "Status must be 'Available', 'Adopted', or 'Fostered'")
     private String status;
 
     @NotNull(message = "Weight is required")
@@ -45,11 +45,9 @@ public class PetDTO {
 
     private Date createdAt;
 
-    @NotNull(message = "User ID is required")
     private Integer appUserId;
 
     private Integer adopterId;
 
-    @NotNull(message = "Category ID is required")
     private Integer petCategoryId;
 }

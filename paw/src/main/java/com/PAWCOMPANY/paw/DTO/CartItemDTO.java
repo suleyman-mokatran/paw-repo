@@ -19,7 +19,6 @@ public class CartItemDTO {
     @Min(value = 0, message = "Price must be a positive value")
     private float price;
 
-    @NotNull(message = "Cart ID is required")
     private Integer cartId;
 
     private List<Integer> productIds;

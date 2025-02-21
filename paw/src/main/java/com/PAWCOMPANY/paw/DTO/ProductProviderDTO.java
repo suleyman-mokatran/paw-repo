@@ -10,7 +10,6 @@ import java.util.List;
 @Setter
 public class ProductProviderDTO extends AppUserDTO {
 
-    @NotNull(message = "Company ID is required")
     private Integer companyId;
 
     private List<Integer> productIds;

@@ -26,13 +26,10 @@ public class ProductDTO {
     @Min(value = 0, message = "Stock cannot be negative")
     private int stock;
 
-    @NotNull(message = "Product provider ID is required")
     private Integer productProviderId;
 
-    @NotNull(message = "Category ID is required")
     private Integer productCategoryId;
 
-    @NotNull(message = "Company ID is required")
     private Integer companyId;
 
     private List<Integer> cartItemIds;

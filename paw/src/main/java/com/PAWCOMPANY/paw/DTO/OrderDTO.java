@@ -18,10 +18,8 @@ public class OrderDTO {
     @Pattern(regexp = "^(Pending|Completed|Canceled)$", message = "Status must be 'Pending', 'Completed', or 'Canceled'")
     private String status;
 
-    @NotNull(message = "Cart ID is required")
     private Integer cartId;
 
-    @NotNull(message = "User ID is required")
     private Integer appUserId;
 
     private List<OrderItemDTO> orderItems;

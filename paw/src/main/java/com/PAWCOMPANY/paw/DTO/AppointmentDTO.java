@@ -22,12 +22,9 @@ public class AppointmentDTO {
     @Pattern(regexp = "^(Pending|Confirmed|Canceled|Completed)$", message = "Status must be 'Pending', 'Confirmed', 'Canceled', or 'Completed'")
     private String status;
 
-    @NotNull(message = "User ID is required")
     private Integer appUserId;
 
-    @NotNull(message = "Service ID is required")
     private Integer serviceId;
 
-    @NotNull(message = "Doctor ID is required")
     private Integer doctorId;
 }

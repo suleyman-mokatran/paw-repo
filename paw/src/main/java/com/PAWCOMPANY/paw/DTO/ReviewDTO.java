@@ -19,10 +19,8 @@ public class ReviewDTO {
 
     private Date date;
 
-    @NotNull(message = "Product ID is required")
     private Integer productId;
 
-    @NotNull(message = "User ID is required")
     private Integer appUserId;
 
     private Integer serviceId;

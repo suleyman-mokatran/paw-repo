@@ -22,10 +22,8 @@ public class ServiceDTO {
     @Positive(message = "Price must be a positive value")
     private float price;
 
-    @NotNull(message = "Company ID is required")
     private Integer companyId;
 
-    @NotNull(message = "Service provider ID is required")
     private Integer serviceProviderId;
 
     private List<Integer> appointmentIds;

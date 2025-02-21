@@ -18,7 +18,6 @@ public class OrderItemDTO {
     @Positive(message = "Price must be a positive value")
     private Float price;
 
-    @NotNull(message = "Order ID is required")
     private Integer orderId;
 
     private List<Integer> productIds;

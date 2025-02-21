@@ -26,7 +26,7 @@ public class AppUserDTO {
     private Date birthDate;
 
     @NotBlank(message = "Gender is required")
-    @Pattern(regexp = "Male|Female|Other", message = "Gender must be Male, Female, or Other")
+    @Pattern(regexp = "Male|Female", message = "Gender must be Male, Female")
     private String gender;
 
     @NotBlank(message = "Email is required")
@@ -43,10 +43,8 @@ public class AppUserDTO {
     @NotBlank(message = "Address is required")
     private String address;
 
-    @NotEmpty(message = "Appointments list cannot be empty")
     private List<Integer> appointmentIds;
 
-    @NotEmpty(message = "Pets list cannot be empty")
     private List<Integer> petIds;
 
     private List<Integer> adoptedPetIds;
