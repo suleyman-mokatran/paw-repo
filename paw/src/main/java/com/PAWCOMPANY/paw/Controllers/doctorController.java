@@ -1,0 +1,43 @@
+package com.PAWCOMPANY.paw.Controllers;
+
+
+import com.PAWCOMPANY.paw.Models.Appointment;
+import com.PAWCOMPANY.paw.Models.Doctor;
+import com.PAWCOMPANY.paw.Repositories.AppointmentRepository;
+import com.PAWCOMPANY.paw.Services.AppointmentService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/doctor")
+public class doctorController {
+
+    @Autowired
+    AppointmentService appointmentService;
+
+    @PostMapping("/addappointment")
+    public ResponseEntity<?> addNewAppointment(@Valid @RequestBody Appointment appointment, BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseEntity.badRequest().body(result.getAllErrors());
+        }
+        Appointment savedAppointment = appointmentService.addNewAppointment(appointment);
+
+        return ResponseEntity.ok(savedAppointment);
+    }
+    @PutMapping("/updateappointment/{id}")
+    public ResponseEntity<?> updateAppointment(@PathVariable int id,@Valid @RequestBody Appointment appointment, BindingResult result){
+        if (result.hasErrors()) {
+            return ResponseEntity.badRequest().body(result.getAllErrors());
+        }
+        Appointment savedAppointment = appointmentService.updateAppointment(id,appointment);
+        return ResponseEntity.ok(savedAppointment);
+    }
+
+    @DeleteMapping("/deleteappointment/{id}")
+    public void deleteAppointment(@PathVariable int id ){
+        appointmentService.DeleteAppointment(id);
+    }
+}
