@@ -31,9 +31,9 @@ public class AppUser {
 
     String gender;
 
-    @Column (unique = false,nullable = true)
+    @Column (unique = true,nullable = false)
     String email;
-    @Column (unique = false,nullable = true)
+    @Column (unique = true,nullable = false)
     int phone;
 
     @Enumerated(EnumType.STRING)
