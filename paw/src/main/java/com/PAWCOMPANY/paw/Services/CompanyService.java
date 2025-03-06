@@ -1,6 +1,7 @@
 package com.PAWCOMPANY.paw.Services;
 
 import com.PAWCOMPANY.paw.Models.Company;
+import com.PAWCOMPANY.paw.Models.Product;
 import com.PAWCOMPANY.paw.Models.ProductProvider;
 import com.PAWCOMPANY.paw.Repositories.CompanyRepository;
 import com.PAWCOMPANY.paw.Role;
@@ -34,7 +35,9 @@ public class CompanyService {
 
         return companyRepository.save(companyToUpdate);
     }
-
+    public Optional<Company> getCompanyById(int id) {
+        return companyRepository.findById(id);
+    }
     public void deleteCompany(int companyId){
          companyRepository.deleteById(companyId);
     }
@@ -42,4 +45,5 @@ public class CompanyService {
     public List<Company> findAllCompanies(){
         return companyRepository.findAll();
     }
+
 }

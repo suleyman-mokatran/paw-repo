@@ -50,6 +50,8 @@ public class Pet {
     @JoinColumn(name = "CategoryId")
     private Category PetCategory;
 
+
+
     public int getPetId() {
         return PetId;
     }
@@ -177,4 +179,6 @@ public class Pet {
     public void setPetCategory(Category petCategory) {
         PetCategory = petCategory;
     }
+
+
 }

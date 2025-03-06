@@ -52,6 +52,9 @@ public class AdminService {
     public List<AppUser> getAllAdmins(){
         return adminRepository.findByRole(Role.ADMIN);
     }
+    public Optional<AppUser> getAdminById(int adminId) {
+        return adminRepository.findById(adminId);
+    }
 
 
 

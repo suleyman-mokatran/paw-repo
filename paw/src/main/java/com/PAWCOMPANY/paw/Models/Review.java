@@ -20,11 +20,11 @@ public class Review {
     Date date;
 
     @ManyToOne
-    @JoinColumn(name = "Product")
+    @JoinColumn(name = "product")
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "AppUser")
+    @JoinColumn(name = "appUser")
     private AppUser appUser;
 
     @ManyToOne

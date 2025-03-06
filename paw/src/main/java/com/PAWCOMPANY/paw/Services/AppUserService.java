@@ -1,6 +1,7 @@
 package com.PAWCOMPANY.paw.Services;
 
 import com.PAWCOMPANY.paw.Models.AppUser;
+import com.PAWCOMPANY.paw.Models.Product;
 import com.PAWCOMPANY.paw.Repositories.AdminRepository;
 import com.PAWCOMPANY.paw.Repositories.AppUserRepository;
 import com.PAWCOMPANY.paw.Role;
@@ -49,5 +50,7 @@ public class AppUserService{
     public List<AppUser> getAllUsers(){
         return appUserRepository.findByRole(Role.USER);
     }
-
+    public Optional<AppUser> getUserById(int id) {
+        return appUserRepository.findById(id);
+    }
 }

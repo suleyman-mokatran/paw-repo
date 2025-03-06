@@ -1,6 +1,7 @@
 package com.PAWCOMPANY.paw.Services;
 
 import com.PAWCOMPANY.paw.Models.AppUser;
+import com.PAWCOMPANY.paw.Models.Product;
 import com.PAWCOMPANY.paw.Models.ServiceModel;
 import com.PAWCOMPANY.paw.Repositories.ServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,13 @@ serviceToUpdate.setDescription(service.getDescription());
 serviceToUpdate.setPrice(service.getPrice());
 
         return serviceRepository.save(serviceToUpdate);
+    }
+    public List<ServiceModel> getAllServices() {
+        return serviceRepository.findAll();
+    }
+
+    public Optional<ServiceModel> getServiceById(int id) {
+        return serviceRepository.findById(id);
     }
 
     public void deleteService(int serviceId){

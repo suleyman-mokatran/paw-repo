@@ -52,7 +52,9 @@ public class ServiceProviderService {
         return serviceProviderRepository.save(SPToUpdate);
     }
 
-
+public Optional<ServiceProvider> getServiceProviderById(int ServiceProviderId){
+        return serviceProviderRepository.findById(ServiceProviderId);
+}
     public List<ServiceProvider> getAllServiceProviders(){
         return serviceProviderRepository.findByRole(Role.SP);
     }

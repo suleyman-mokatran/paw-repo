@@ -2,6 +2,7 @@ package com.PAWCOMPANY.paw.Services;
 
 import com.PAWCOMPANY.paw.Models.AppUser;
 import com.PAWCOMPANY.paw.Models.Pet;
+import com.PAWCOMPANY.paw.Models.Product;
 import com.PAWCOMPANY.paw.Repositories.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,13 @@ public class PetService {
     public Pet addNewPet(Pet pet){
         pet.setCreatedAt(LocalDateTime.now());
         return petRepository.save(pet);
+    }
+    public List<Pet> getAllPets() {
+        return petRepository.findAll();
+    }
+
+    public Optional<Pet> getPetById(int id) {
+        return petRepository.findById(id);
     }
 
     public void deletePet(int petId){

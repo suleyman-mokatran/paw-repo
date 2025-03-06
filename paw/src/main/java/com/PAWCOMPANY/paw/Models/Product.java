@@ -1,29 +1,26 @@
 package com.PAWCOMPANY.paw.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.awt.*;
 import java.util.List;
-import java.util.concurrent.ConcurrentMap;
-
 
 @Entity
-@Getter
-@Setter
-@Table(name= "products")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int ProductId;
+    private int productId;  // Corrected field naming
 
-    String ProductName;
-    String Description;
-    float Price;
-    int Stock;
-
+    private String ProductName;  // Corrected field naming
+    private String Description;
+    private float Price;
+    private int Stock;
 
     @ManyToOne
     @JoinColumn(name = "ProductProviderId")
@@ -34,11 +31,11 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "Category")
-    private Category ProductCategory;
+    private Category ProductCategory;  // Corrected field naming
 
     @ManyToOne
     @JoinColumn(name = "Company")
-    private Company Company;
+    private Company Company;  // Corrected field naming
 
     @ManyToMany
     @JoinTable(
@@ -46,7 +43,7 @@ public class Product {
             joinColumns = @JoinColumn(name = "ProductId"),
             inverseJoinColumns = @JoinColumn(name = "CartItemId")
     )
-    private List<CartItem> cartItemList ;
+    private List<CartItem> cartItemList;
 
     @ManyToMany
     @JoinTable(
@@ -54,5 +51,96 @@ public class Product {
             joinColumns = @JoinColumn(name = "ProductId"),
             inverseJoinColumns = @JoinColumn(name = "OrderItemId")
     )
-    private List<OrderItem> orderItemList ;
+    private List<OrderItem> orderItemList;
+
+    public ProductProvider getProductProvider() {
+        return ProductProvider;
+    }
+
+    public List<Review> getReviewList() {
+        return reviewList;
+    }
+
+    public Category getProductCategory() {
+        return ProductCategory;
+    }
+
+    public Company getCompany() {
+        return Company;
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public String getProductName() {
+        return ProductName;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public float getPrice() {
+        return Price;
+    }
+
+
+    public int getStock() {
+        return Stock;
+    }
+
+    public void setProductProvider(ProductProvider productProvider) {
+        this.ProductProvider = productProvider;
+    }
+
+    public void setReviewList(List<Review> reviewList) {
+        this.reviewList = reviewList;
+    }
+
+    public void setProductCategory(Category productCategory) {
+        ProductCategory = productCategory;
+    }
+
+    public void setCompany(Company company) {
+        this.Company = company;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
+    }
+
+    public void setOrderItemList(List<OrderItem> orderItemList) {
+        this.orderItemList = orderItemList;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setProductName(String productName) {
+        this.ProductName = productName;
+    }
+
+    public void setDescription(String description) {
+        this.Description = description;
+    }
+
+    public void setPrice(float price) {
+        this.Price = price;
+    }
+
+    public void setStock(int stock) {
+        this.Stock = stock;
+    }
+
+
 }

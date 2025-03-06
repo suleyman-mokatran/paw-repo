@@ -17,6 +17,8 @@ public class Category {
       int categoryId;
 
 
+     private String name;
+
     @Enumerated(EnumType.STRING)
     Type type;
 
@@ -25,6 +27,14 @@ public class Category {
 
     @OneToMany(mappedBy = "ProductCategory", cascade = CascadeType.ALL)
     private List<Product> productList;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getCategoryId() {
         return categoryId;
